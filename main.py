@@ -12,7 +12,7 @@ sun.points = 0
 def draw():
     screen.fill("skyblue")
     sun.draw()
-    screen.draw.text(str(sun.points), center=(WIDTH / 2, 50), color="red", fontsize=100)
+    screen.draw.text(text=str(sun.points), center=(WIDTH / 2, 50), color="red", fontsize=100)
 
 
 def update():
