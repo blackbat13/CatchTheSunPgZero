@@ -1,18 +1,31 @@
-import pgzrun
 import random
+
+import pgzrun
+
+
+""" CONFIGURATION """
 
 WIDTH = 800
 HEIGHT = 600
+
+""" VARIABLES """
 
 sun = Actor("sun")
 sun.timer = 0
 sun.points = 0
 
 
+""" DRAW """
+
+
 def draw():
     screen.fill("skyblue")
     sun.draw()
-    screen.draw.text(text=str(sun.points), center=(WIDTH / 2, 50), color="red", fontsize=100)
+    screen.draw.text(text=str(sun.points), center=(
+        WIDTH / 2, 50), color="red", fontsize=100)
+
+
+""" UPDATE """
 
 
 def update():
@@ -24,6 +37,9 @@ def update():
         sun.timer = 60 - sun.points
 
 
+""" EVENTS """
+
+
 def on_mouse_down(pos):
     if sun.collidepoint(pos):
         sun.points += 1
@@ -32,5 +48,7 @@ def on_mouse_down(pos):
         sun.points -= 1
         sun.timer = 0
 
+
+""" INITIALIZATION """
 
 pgzrun.go()
